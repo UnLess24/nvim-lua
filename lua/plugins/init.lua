@@ -28,10 +28,22 @@ return require('packer').startup(function(use)
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
 	  requires = { {'nvim-lua/plenary.nvim'} },
-	  require('plugins.telescope')
+ 	  require('plugins.telescope'),
+     require('telescope').setup{
+       defaults = {
+         file_ignore_patterns = { "*.js", "./*.js", "./**/*.js" }
+       }
+     }
   }
+  use { 'nvim-telescope/telescope-dap.nvim' }
+  use { 'nvim-telescope/telescope-packer.nvim' }
+  require('telescope').load_extension('dap')
+  require('telescope').load_extension('packer')
 
   use 'mfussenegger/nvim-dap'
+  require('plugins.dap')
+  require('plugins.php_dap_adapter')
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 
   use {
   "NTBBloodbath/rest.nvim",
@@ -44,8 +56,8 @@ return require('packer').startup(function(use)
       result_split_in_place = false,
       -- Skip SSL verification, useful for unknown certificates
       skip_ssl_verification = false,
-			-- Encode URL before making request
-			encode_url = true,
+      -- Encode URL before making request
+      encode_url = true,
       -- Highlight request on run
       highlight = {
         enabled = true,
@@ -66,7 +78,7 @@ return require('packer').startup(function(use)
         },
       },
       -- Jump to request line on run
-      jump_to_request = false,
+      jump_to_request = true,
       env_file = '.env',
       custom_dynamic_variables = {},
       yank_dry_run = true,
@@ -99,7 +111,7 @@ return require('packer').startup(function(use)
   }
   
   -- icons
-  use('onsails/lspkind-nvim')
+  use{'onsails/lspkind-nvim'}
 
   -- statusbar
   use {
@@ -131,9 +143,6 @@ return require('packer').startup(function(use)
     
   use {
     'numToStr/Comment.nvim',
-    -- config = function()
-    --   require('Comment').setup()
-    -- end
     require('Comment').setup()
   }
     
@@ -144,11 +153,11 @@ return require('packer').startup(function(use)
 
   use {
       "kylechui/nvim-surround",
-      -- config = function()
+      config = function()
           require("nvim-surround").setup({
               -- Configuration here, or leave empty to use defaults
           })
-      -- end
+      end
   }
 
   lspconfig = require "lspconfig"
@@ -166,7 +175,7 @@ return require('packer').startup(function(use)
       requires = {
           "nvim-lua/plenary.nvim",
           "nvim-treesitter/nvim-treesitter",
-      },
+      }
     }
 end)
 
