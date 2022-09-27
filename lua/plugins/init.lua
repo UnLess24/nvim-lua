@@ -14,6 +14,11 @@ return require('packer').startup(function(use)
 
   use 'phpactor/phpactor'
 
+  use 'morhetz/gruvbox'
+  use 'rcarriga/nvim-dap-ui'
+  require('dapui').setup()
+  require('plugins.dapui')
+
   -- use {
   --     'neoclide/coc.nvim', 
   --     branch = 'release'
@@ -43,7 +48,7 @@ return require('packer').startup(function(use)
   use 'mfussenegger/nvim-dap'
   require('plugins.dap')
   require('plugins.php_dap_adapter')
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  -- use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 
   use {
   "NTBBloodbath/rest.nvim",

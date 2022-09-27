@@ -89,10 +89,20 @@ _G.packer_plugins = {
     path = "/Users/y.khaydanov/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  gruvbox = {
+    loaded = true,
+    path = "/Users/y.khaydanov/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/morhetz/gruvbox"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/y.khaydanov/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/Users/y.khaydanov/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
   },
   ["nvim-lspconfig"] = {
     loaded = true,

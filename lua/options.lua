@@ -1,19 +1,3 @@
--- local wo = vim.wo
--- wo.relativenumber = true
--- wo.scrolloff = 7
--- --wo.encoding = 'UTF-8'
--- --wo.fileencoding = 'UTF-8'
--- --wo.colorcolumn = 80
--- wo.numberwidth = 6
---
--- local o = vim.o
--- o.tabstop = 4
--- o.shiftwidth = 4
--- o.smarttab = true
--- o.expandtab = true
--- o.smartindent = true
--- o.autoindent = true
-
 local cmd = vim.cmd             -- execute Vim commands
 local exec = vim.api.nvim_exec  -- execute Vimscript
 local g = vim.g                 -- global variables
@@ -41,7 +25,7 @@ g.netrw_browse_split = 3
 -----------------------------------------------------------
 -- Главные
 -----------------------------------------------------------
-opt.colorcolumn = '80'              -- Разделитель на 80 символов
+opt.colorcolumn = '120'             -- Разделитель на n символов
 opt.cursorline = true               -- Подсветка строки с курсором
 opt.spelllang= { 'en_us', 'ru' }    -- Словари рус eng
 opt.number = true                   -- Включаем нумерацию строк
@@ -54,7 +38,8 @@ opt.splitbelow = true               -- horizontal split вниз
 -- Цветовая схема
 -----------------------------------------------------------
 opt.termguicolors = true      --  24-bit RGB colors
--- cmd'colorscheme onedark'
+opt.background = 'light'
+cmd('colorscheme gruvbox')
 -----------------------------------------------------------
 -- Табы и отступы
 -----------------------------------------------------------
