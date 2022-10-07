@@ -21,11 +21,10 @@ map('', '<right>', '', opts)
 map('n', '<leader>rest', '<Plug>RestNvim', opts)
 map('n', '<leader>rests', '<Plug>RestNvimPreview', opts)
 
-map('n', ';e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
--- map('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-map('n', ';q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+map('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+map('n', '<leader>d[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+map('n', '<leader>d]', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+map('n', '<leader>dd', '<cmd>Telescope diagnostics<CR>', opts)
 -- map('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 
 map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -41,6 +40,15 @@ map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 map('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
+-- Set pretty JSON
+-- !python -m json.tool
+
+-- copy|past clipboard
+map('v', '<leader>y', '"*y', opts)
+map('n', '<leader>p', '"*p', opts)
+map('n', '<leader>Y', '"*yy', opts)
+
 --
 -- local on_attach = function(client, bufnr)
 --   -- Enable completion triggered by <c-x><c-o>

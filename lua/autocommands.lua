@@ -1,12 +1,3 @@
-vim.api.nvim_create_autocmd({'BufEnter'}, {
-  pattern = '*',
-  callback = function(opt)
-    opt.fo:remove('c')
-    opt.fo:remove('r')
-    opt.fo:remove('o')
-  end
-})
-
 vim.api.nvim_create_autocmd({'BufWritePre'}, {
   pattern = '*.go',
   callback = function()
@@ -32,8 +23,7 @@ vim.api.nvim_create_autocmd({'BufWritePre'}, {
   end
 })
 
-local TrimWhiteSpaceGrp = vim.api.nvim_create_augroup
-('TrimWhiteSpaceGrp', {})
+local TrimWhiteSpaceGrp = vim.api.nvim_create_augroup('TrimWhiteSpaceGrp', {})
 vim.api.nvim_create_autocmd('BufWritePre', {
 	group = TrimWhiteSpaceGrp,
   pattern = '*',
@@ -45,9 +35,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 	group = YankHighlightGrp,
   pattern = '*',
   callback = function()
-    vim.highlight.on_yank({
-      higroup = 'IncSearch',
-      timeout = 40,
-    })
+    vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 700, })
   end,
 })

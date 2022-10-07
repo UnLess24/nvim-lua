@@ -2,9 +2,9 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-      
+
   use 'nvim-lua/plenary.nvim'
-    
+
   use 'neovim/nvim-lspconfig'
 
   use 'hrsh7th/cmp-nvim-lsp'
@@ -15,12 +15,12 @@ return require('packer').startup(function(use)
   use 'phpactor/phpactor'
 
   use 'morhetz/gruvbox'
+  use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
-  require('dapui').setup()
   require('plugins.dapui')
 
   -- use {
-  --     'neoclide/coc.nvim', 
+  --     'neoclide/coc.nvim',
   --     branch = 'release'
   -- }
 
@@ -29,7 +29,7 @@ return require('packer').startup(function(use)
 	  run = ':TSUpdate',
 	  require('plugins.treesitter')
   }
-    
+
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
 	  requires = { {'nvim-lua/plenary.nvim'} },
@@ -45,10 +45,8 @@ return require('packer').startup(function(use)
   require('telescope').load_extension('dap')
   require('telescope').load_extension('packer')
 
-  use 'mfussenegger/nvim-dap'
   require('plugins.dap')
   require('plugins.php_dap_adapter')
-  -- use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 
   use {
   "NTBBloodbath/rest.nvim",
@@ -108,13 +106,13 @@ return require('packer').startup(function(use)
       'kyazdani42/nvim-web-devicons',
       require('nvim-web-devicons').setup({ default = true; })
   }
-    
+
   -- auto complete
   use {
     'tzachar/cmp-tabnine',
     run='./install.sh'
   }
-  
+
   -- icons
   use{'onsails/lspkind-nvim'}
 
@@ -126,7 +124,7 @@ return require('packer').startup(function(use)
         options = { theme = 'ayu_light' }
     }
   }
-    
+
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
 
   -- snippet core
@@ -139,18 +137,18 @@ return require('packer').startup(function(use)
         })
     end
   }
-    
+
   -- snippets cmp
   use 'saadparwaiz1/cmp_luasnip'
-    
+
   -- snippets for all languages
   use 'rafamadriz/friendly-snippets'
-    
+
   use {
     'numToStr/Comment.nvim',
     require('Comment').setup()
   }
-    
+
   use {
     'windwp/nvim-autopairs',
     require("nvim-autopairs").setup()
@@ -165,15 +163,6 @@ return require('packer').startup(function(use)
       end
   }
 
-  lspconfig = require "lspconfig"
-  util = require "lspconfig/util"
-
-  lspconfig.intelephense.setup{
-      cmd = { "intelephense", "--stdio" },
-      filetypes = { "php" },
-      root_dir = util.root_pattern("composer.json", ".git")
-  }
-
   -- Go utilities
   use {
       "olexsmir/gopher.nvim",
@@ -182,5 +171,6 @@ return require('packer').startup(function(use)
           "nvim-treesitter/nvim-treesitter",
       }
     }
+
 end)
 
