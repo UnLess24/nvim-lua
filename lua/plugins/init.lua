@@ -19,6 +19,22 @@ return require('packer').startup(function(use)
   use 'rcarriga/nvim-dap-ui'
   require('plugins.dapui')
 
+  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+  require('bufferline').setup{}
+
+  -- TODO: comments
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+
   -- use {
   --     'neoclide/coc.nvim',
   --     branch = 'release'
@@ -49,45 +65,45 @@ return require('packer').startup(function(use)
   require('plugins.php_dap_adapter')
 
   use {
-  "NTBBloodbath/rest.nvim",
-  requires = { "nvim-lua/plenary.nvim" },
-  config = function()
-    require("rest-nvim").setup({
-      -- Open request results in a horizontal split
-      result_split_horizontal = false,
-      -- Keep the http file buffer above|left when split horizontal|vertical
-      result_split_in_place = false,
-      -- Skip SSL verification, useful for unknown certificates
-      skip_ssl_verification = false,
-      -- Encode URL before making request
-      encode_url = true,
-      -- Highlight request on run
-      highlight = {
-        enabled = true,
-        timeout = 150,
-      },
-      result = {
-        -- toggle showing URL, HTTP info, headers at top the of result window
-        show_url = true,
-        show_http_info = true,
-        show_headers = true,
-        -- executables or functions for formatting response body [optional]
-        -- set them to nil if you want to disable them
-        formatters = {
-          json = "jq",
-          html = function(body)
-            return vim.fn.system({"tidy", "-i", "-q", "-"}, body)
-          end
+    "NTBBloodbath/rest.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("rest-nvim").setup({
+        -- Open request results in a horizontal split
+        result_split_horizontal = false,
+        -- Keep the http file buffer above|left when split horizontal|vertical
+        result_split_in_place = false,
+        -- Skip SSL verification, useful for unknown certificates
+        skip_ssl_verification = false,
+        -- Encode URL before making request
+        encode_url = true,
+        -- Highlight request on run
+        highlight = {
+          enabled = true,
+          timeout = 150,
         },
-      },
-      -- Jump to request line on run
-      jump_to_request = true,
-      env_file = '.env',
-      custom_dynamic_variables = {},
-      yank_dry_run = true,
-    })
-  end
-}
+        result = {
+          -- toggle showing URL, HTTP info, headers at top the of result window
+          show_url = true,
+          show_http_info = true,
+          show_headers = true,
+          -- executables or functions for formatting response body [optional]
+          -- set them to nil if you want to disable them
+          formatters = {
+            json = "jq",
+            html = function(body)
+              return vim.fn.system({"tidy", "-i", "-q", "-"}, body)
+            end
+          },
+        },
+        -- Jump to request line on run
+        jump_to_request = true,
+        env_file = '.env',
+        custom_dynamic_variables = {},
+        yank_dry_run = true,
+      })
+    end
+  }
 
   use {
       'phaazon/hop.nvim',

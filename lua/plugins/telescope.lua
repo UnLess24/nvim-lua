@@ -10,7 +10,7 @@ require('telescope').setup {
 local map = vim.api.nvim_set_keymap
 local opts = {noremap = true, silent = true}
 -- горячие клавиши
-map('n', '<leader>ff', '<cmd>Telescope find_files<CR>', opts)
+map('n', '<leader>ff', '<cmd>Telescope find_files hidden=true<CR>', opts)
 map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', opts)
 map('n', '<leader>fgc', '<cmd>lua require"telescope.builtin".live_grep{search_dirs={"%:p"}}<CR>', opts)
 map('n', '<leader>fgs', '<cmd>Telescope grep_string<CR>', opts)

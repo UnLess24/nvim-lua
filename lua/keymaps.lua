@@ -49,6 +49,9 @@ map('v', '<leader>y', '"*y', opts)
 map('n', '<leader>p', '"*p', opts)
 map('n', '<leader>Y', '"*yy', opts)
 
+-- Buffer Line select buffer map
+map('n', 'gT', '<cmd>BufferLineCyclePrev<CR>', opts)
+map('n', 'gt', '<cmd>BufferLineCycleNext<CR>', opts)
 --
 -- local on_attach = function(client, bufnr)
 --   -- Enable completion triggered by <c-x><c-o>
