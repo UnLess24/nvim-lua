@@ -22,6 +22,17 @@ return require('packer').startup(function(use)
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
   require('bufferline').setup{}
 
+  use({"L3MON4D3/LuaSnip", tag = "v1.*"})
+
+  use {
+      "kylechui/nvim-surround",
+      config = function()
+          require("nvim-surround").setup({
+              -- Configuration here, or leave empty to use defaults
+          })
+      end
+  }
+
   -- TODO: comments
   use {
     "folke/todo-comments.nvim",
@@ -35,16 +46,20 @@ return require('packer').startup(function(use)
     end
   }
 
-  -- use {
-  --     'neoclide/coc.nvim',
-  --     branch = 'release'
-  -- }
-
   use {
 	  'nvim-treesitter/nvim-treesitter',
 	  run = ':TSUpdate',
 	  require('plugins.treesitter')
   }
+
+  -- use {
+  --   "ThePrimeagen/refactoring.nvim",
+  --   requires = {
+  --       {"nvim-lua/plenary.nvim"},
+  --       {"nvim-treesitter/nvim-treesitter"}
+  --   }
+  -- }
+  -- require('refactoring').setup({})
 
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -60,6 +75,7 @@ return require('packer').startup(function(use)
   use { 'nvim-telescope/telescope-packer.nvim' }
   require('telescope').load_extension('dap')
   require('telescope').load_extension('packer')
+  -- require('telescope').load_extension('refactoring')
 
   require('plugins.dap')
   require('plugins.php_dap_adapter')
@@ -168,15 +184,6 @@ return require('packer').startup(function(use)
   use {
     'windwp/nvim-autopairs',
     require("nvim-autopairs").setup()
-  }
-
-  use {
-      "kylechui/nvim-surround",
-      config = function()
-          require("nvim-surround").setup({
-              -- Configuration here, or leave empty to use defaults
-          })
-      end
   }
 
   -- Go utilities
