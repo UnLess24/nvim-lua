@@ -73,9 +73,11 @@ return require('packer').startup(function(use)
   }
   use { 'nvim-telescope/telescope-dap.nvim' }
   use { 'nvim-telescope/telescope-packer.nvim' }
+  use { 'nvim-telescope/telescope-file-browser.nvim' }
   require('telescope').load_extension('dap')
   require('telescope').load_extension('packer')
   -- require('telescope').load_extension('refactoring')
+  require('telescope').load_extension('file_browser')
 
   require('plugins.dap')
   require('plugins.php_dap_adapter')

@@ -22,6 +22,9 @@ g.netrw_banner = 0
 g.netrw_liststyle = 3
 g.netrw_browse_split = 3
 
+g.encoding='utf-8'
+g.fileencoding='utf-8'
+
 -----------------------------------------------------------
 -- Главные
 -----------------------------------------------------------
@@ -53,7 +56,9 @@ opt.shiftwidth = 4        -- shift 4 spaces when tab
 opt.tabstop = 4           -- 1 tab == 4 spaces
 opt.smartindent = true    -- autoindent new lines
 
+cmd [[autocmd FileType php setlocal indentexpr =]]
 cmd [[autocmd FileType php setlocal autoindent]]
+cmd [[autocmd FileType php setlocal smartindent]]
 -- don't auto commenting new lines
 cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
 -- remove line lenght marker for selected filetypes

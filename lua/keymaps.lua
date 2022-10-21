@@ -30,8 +30,8 @@ map('n', '<leader>p', '"*p', opts)
 map('n', '<leader>Y', '"*yy', opts)
 
 -- Buffer Line select buffer map
-map('n', 'gT', '<cmd>bnext<CR>', opts)
-map('n', 'gt', '<cmd>bprevious<CR>', opts)
+map('n', 'gt', '<cmd>bnext<CR>', opts)
+map('n', 'gT', '<cmd>bprevious<CR>', opts)
 map('n', '<leader>gT', '<cmd>BufferLinePickClose<CR>', opts)
 map('n', '<leader>gt', '<cmd>BufferLinePick<CR>', opts)
 
