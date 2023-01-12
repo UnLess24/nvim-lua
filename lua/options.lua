@@ -38,12 +38,21 @@ opt.so=999                          -- Курсор всегда в центре
 opt.undofile = true                 -- Возможность отката назад
 opt.splitright = true               -- vertical split вправо
 opt.splitbelow = true               -- horizontal split вниз
+opt.mouse = ''                      -- отключение мыши
 -----------------------------------------------------------
 -- Цветовая схема
 -----------------------------------------------------------
 opt.termguicolors = true      --  24-bit RGB colors
-opt.background = 'light'
-cmd('colorscheme gruvbox')
+g.ayucolor='light'
+cmd('colorscheme ayu')
+-- " IndentLine {{
+g.indentLine_char = ''
+g.indentLine_first_char = ''
+g.indentLine_showFirstIndentLevel = 1
+g.indentLine_setColors = 1
+-- " }}
+-- opt.background = 'light' -- 'dark'
+-- cmd('colorscheme gruvbox')
 -----------------------------------------------------------
 -- Табы и отступы
 -----------------------------------------------------------

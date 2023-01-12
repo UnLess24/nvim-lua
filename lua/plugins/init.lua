@@ -14,7 +14,10 @@ return require('packer').startup(function(use)
 
   use 'phpactor/phpactor'
 
+  -- Colorschemes
   use 'morhetz/gruvbox'
+  use 'ayu-theme/ayu-vim'
+
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
   require('plugins.dapui')
@@ -67,7 +70,7 @@ return require('packer').startup(function(use)
  	  require('plugins.telescope'),
      require('telescope').setup{
        defaults = {
-         file_ignore_patterns = { "*.js", "./*.js", "./**/*.js" }
+         file_ignore_patterns = { "*.js$", "./*.js$", "./**/*.js$" }
        }
      }
   }

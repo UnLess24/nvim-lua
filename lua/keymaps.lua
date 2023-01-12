@@ -32,6 +32,6 @@ map('n', '<leader>Y', '"*yy', opts)
 -- Buffer Line select buffer map
 map('n', 'gt', '<cmd>bnext<CR>', opts)
 map('n', 'gT', '<cmd>bprevious<CR>', opts)
-map('n', '<leader>gT', '<cmd>BufferLinePickClose<CR>', opts)
-map('n', '<leader>gt', '<cmd>BufferLinePick<CR>', opts)
+map('n', '<leader>bd', '<cmd>BufferLinePickClose<CR>', opts)
+map('n', '<leader>bs', '<cmd>BufferLinePick<CR>', opts)
 
