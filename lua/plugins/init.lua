@@ -12,6 +12,11 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/nvim-cmp'
 
+  use {
+    "fatih/vim-go",
+    run = ":GoUpdateBinaries"
+  }
+
   use 'phpactor/phpactor'
 
   -- Colorschemes
@@ -192,13 +197,13 @@ return require('packer').startup(function(use)
   }
 
   -- Go utilities
-  use {
-      "olexsmir/gopher.nvim",
-      requires = {
-          "nvim-lua/plenary.nvim",
-          "nvim-treesitter/nvim-treesitter",
-      }
-    }
+  -- use {
+  --     "olexsmir/gopher.nvim",
+  --     requires = {
+  --         "nvim-lua/plenary.nvim",
+  --         "nvim-treesitter/nvim-treesitter",
+  --     }
+  -- }
 
 end)
 

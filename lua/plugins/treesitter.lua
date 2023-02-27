@@ -4,7 +4,7 @@ require('nvim-treesitter.configs').setup{
   -- https://github.com/nvim-treesitter/nvim-treesitter
   ensure_installed = 'all',
   -- установка phpdoc падает на m1
-  ignore_install = { 'phpdoc' },
+  ignore_install = { 'smali' },
   -- включить подсветку
   highlight = { enable = true }
 }
