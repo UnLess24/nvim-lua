@@ -23,6 +23,12 @@ vim.api.nvim_create_autocmd({'BufWritePre'}, {
   end
 })
 
+local Mkdir = vim.api.nvim_create_augroup("Mkdir", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePre", {
+  command = 'call mkdir(expand("<afile>:p:h"), "p")',
+  group = Mkdir,
+})
+
 local TrimWhiteSpaceGrp = vim.api.nvim_create_augroup('TrimWhiteSpaceGrp', {})
 vim.api.nvim_create_autocmd('BufWritePre', {
 	group = TrimWhiteSpaceGrp,

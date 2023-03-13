@@ -25,9 +25,9 @@ map('n', '<leader>rests', '<Plug>RestNvimPreview', opts)
 -- !python -m json.tool
 
 -- copy|past clipboard
-map('v', '<leader>y', '"*y', opts)
-map('n', '<leader>p', '"*p', opts)
-map('n', '<leader>Y', '"*yy', opts)
+map('v', '<leader>y', '"+y', opts)
+map('n', '<leader>p', '"+p', opts)
+map('n', '<leader>Y', '"+yy', opts)
 
 -- Buffer Line select buffer map
 map('n', 'gt', '<cmd>bnext<CR>', opts)
